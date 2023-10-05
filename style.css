@@ -1,0 +1,23 @@
+body{
+    background-color: aqua;
+}
+body{
+    counter-reset: main;
+}
+h1::before{
+    counter-increment: main;
+    content:"Main Contept" counter(main)"!";
+}
+h1{
+    counter-reset: sub;
+}
+h2::before{
+    counter-increment: sub;
+    content: counter(main);
+    counter: counter(main)"." countersub(sub);
+
+}
+li::before{
+    counter-increment: list;
+    content: counters(list,".");
+}
